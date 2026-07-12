@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Afinações de Viola Caipira</title>
-  <meta name="description" content="Conheça as principais afinações de viola caipira, músicas famosas em cada afinação e dicas para cuidar bem do seu instrumento." />
+  <meta name="description" content="Conheça as principais afinações de viola caipira, músicas famosas em cada afinação, área de downloads e dicas para cuidar bem do seu instrumento." />
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,11 +16,11 @@
       --bg-soft: #efe4d4;
       --paper: rgba(255,255,255,0.55);
       --text: #2e241b;
-      --muted: #0d1f88;
-      --line: rgba(26, 6, 97, 0.18);
-      --accent: #1045d6;
-      --accent-2: #1a6cd8;
-      --accent-3: #377396;
+      --muted: #6e5a49;
+      --line: rgba(84, 56, 28, 0.18);
+      --accent: #8f2f1c;
+      --accent-2: #c97f39;
+      --accent-3: #5f4b3a;
       --shadow: 0 20px 60px rgba(67, 39, 11, 0.12);
       --radius: 22px;
       --max: 1180px;
@@ -98,6 +98,14 @@
       text-align:center;
       font-weight:700;
       padding:.5rem;
+      overflow:hidden;
+    }
+
+    .logo-slot img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      border-radius:18px;
     }
 
     .brand{
@@ -197,10 +205,13 @@
       border-radius:999px;
       padding:.95rem 1.25rem;
       transition:.28s ease;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
     }
 
     .btn-primary{
-      background:linear-gradient(135deg, var(--accent), #2b75b2);
+      background:linear-gradient(135deg, var(--accent), #b2452b);
       color:#fff;
       box-shadow:0 14px 32px rgba(143,47,28,.24);
     }
@@ -235,8 +246,8 @@
       aspect-ratio: 4 / 5;
       border-radius:36px;
       background:
-        linear-gradient(145deg, rgba(255,255,255,.5), rgba(20, 78, 155, 0.15)),
-        linear-gradient(180deg, #1b3fa1, #1f140d 60%, #1d506d);
+        linear-gradient(145deg, rgba(255,255,255,.5), rgba(255,255,255,.15)),
+        linear-gradient(180deg, #3b2618, #1f140d 60%, #493122);
       box-shadow: var(--shadow);
       border:1px solid rgba(255,255,255,.28);
       overflow:hidden;
@@ -251,7 +262,7 @@
       border-radius:50%;
       background:
         radial-gradient(circle at 35% 35%, #000 0 31%, transparent 31.5%),
-        radial-gradient(circle at 35% 35%, #10477a 0 43%, #1a2563 43.5% 49%, transparent 49.5%);
+        radial-gradient(circle at 35% 35%, #8f6533 0 43%, #3c2717 43.5% 49%, transparent 49.5%);
       opacity:.95;
       transform:translate(4%, 8%);
       filter:drop-shadow(0 12px 18px rgba(0,0,0,.24));
@@ -363,14 +374,16 @@
     }
 
     .intro-note h4,
-    .care-box h4{
+    .care-box h4,
+    .download-highlight h4{
       margin:0;
       font-family:"Bree Serif", serif;
       font-size:1.4rem;
       line-height:1.1;
     }
 
-    .intro-note p{
+    .intro-note p,
+    .download-highlight p{
       margin:0;
       color:var(--muted);
     }
@@ -418,7 +431,7 @@
       inset:0;
       background:
         radial-gradient(circle at 25% 40%, rgba(0,0,0,.85) 0 14%, transparent 14.5%),
-        radial-gradient(circle at 25% 40%, rgba(28, 117, 201, 0.75) 0 24%, rgba(52,33,20,.95) 24.6% 29%, transparent 29.5%);
+        radial-gradient(circle at 25% 40%, rgba(214,156,83,.75) 0 24%, rgba(52,33,20,.95) 24.6% 29%, transparent 29.5%);
       opacity:.95;
     }
 
@@ -437,13 +450,22 @@
       mix-blend-mode:screen;
     }
 
+    .photo-slot img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+      position:relative;
+      z-index:3;
+    }
+
     .photo-label{
       position:absolute;
       left:1rem;
       bottom:1rem;
-      z-index:2;
+      z-index:4;
       background:rgba(255,247,240,.80);
-      border:1px dashed rgba(28, 74, 143, 0.42);
+      border:1px dashed rgba(143,47,28,.42);
       color:var(--accent);
       border-radius:16px;
       padding:.8rem .95rem;
@@ -530,6 +552,76 @@
       color:var(--accent);
     }
 
+    .downloads-layout{
+      display:grid;
+      grid-template-columns:.9fr 1.1fr;
+      gap:1.3rem;
+      align-items:start;
+    }
+
+    .download-highlight{
+      padding:1.5rem;
+      background:
+        linear-gradient(180deg, rgba(201,127,57,.10), rgba(143,47,28,.04));
+    }
+
+    .download-grid{
+      display:grid;
+      gap:1rem;
+    }
+
+    .download-item{
+      display:grid;
+      grid-template-columns:auto 1fr auto;
+      gap:1rem;
+      align-items:center;
+      padding:1.1rem 1.15rem;
+      border-radius:22px;
+      background:rgba(255,255,255,.46);
+      border:1px solid rgba(84,56,28,.08);
+      box-shadow:var(--shadow);
+    }
+
+    .download-icon{
+      width:54px;
+      height:54px;
+      border-radius:16px;
+      display:grid;
+      place-items:center;
+      background:linear-gradient(135deg, rgba(143,47,28,.14), rgba(201,127,57,.16));
+      color:var(--accent);
+      font-weight:900;
+      font-size:.92rem;
+      border:1px solid rgba(143,47,28,.10);
+    }
+
+    .download-meta h5{
+      margin:0;
+      font-size:1.08rem;
+      color:var(--text);
+    }
+
+    .download-meta p{
+      margin:.1rem 0 0;
+      color:var(--muted);
+    }
+
+    .download-btn{
+      padding:.78rem 1rem;
+      border-radius:999px;
+      background:linear-gradient(135deg, var(--accent), #b2452b);
+      color:#fff;
+      font-weight:800;
+      transition:.28s ease;
+      box-shadow:0 12px 24px rgba(143,47,28,.18);
+      white-space:nowrap;
+    }
+
+    .download-btn:hover{
+      transform:translateY(-2px) scale(1.02);
+      box-shadow:0 16px 28px rgba(143,47,28,.24);
+    }
+
     .care-layout{
       display:grid;
       grid-template-columns: .9fr 1.1fr;
@@ -584,7 +676,7 @@
       padding:1.4rem;
       border-radius:26px;
       background:
-        linear-gradient(135deg, rgba(28, 36, 143, 0.92), rgba(95,75,58,.95));
+        linear-gradient(135deg, rgba(143,47,28,.92), rgba(95,75,58,.95));
       color:#fffaf4;
       box-shadow:var(--shadow);
     }
@@ -638,6 +730,7 @@
       .tuning,
       .tuning:nth-child(even),
       .care-layout,
+      .downloads-layout,
       .section-head{
         grid-template-columns:1fr;
       }
@@ -687,16 +780,25 @@
       .pair:last-child{
         grid-column:1 / -1;
       }
+
+      .download-item{
+        grid-template-columns:1fr;
+        align-items:start;
+      }
+
+      .download-btn{
+        width:100%;
+        text-align:center;
+      }
     }
   </style>
 </head>
 <body>
   <header class="topbar">
     <div class="container topbar-inner">
-    <div class="logo-slot">
-  <img src="sesc logo.png" alt="Logo da empresa">
-</div>
-
+      <div class="logo-slot" aria-label="Espaço reservado para logomarca">
+        Sua<br>Logo<br>Aqui
+      </div>
 
       <div class="brand">
         <span class="eyebrow">Viola Caipira</span>
@@ -706,6 +808,7 @@
       <nav class="nav" aria-label="Navegação principal">
         <a href="#inicio">Início</a>
         <a href="#afinacoes">Afinações</a>
+        <a href="#downloads">Downloads</a>
         <a href="#cuidados">Cuidados</a>
       </nav>
     </div>
@@ -724,7 +827,7 @@
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#afinacoes">Explorar afinações</a>
-            <a class="btn btn-secondary" href="#cuidados">Ver cuidados com a viola</a>
+            <a class="btn btn-secondary" href="#downloads">Área de downloads</a>
           </div>
         </div>
 
@@ -767,12 +870,11 @@
           </article>
 
           <aside class="intro-note glass reveal">
-            <h4>Espaço para observação</h4>
+            <h4>Espaço para personalização</h4>
             <p>
-              A viola caipira é um instrumento versátil que é capaz de desenvolver
-              muita criatividade e inspiração para o instrumentista devido a grande
-              possibilidades de afinações do instrumento, talvez por esse motivo o acervo
-              musical e repertorio seja tão vasto no cancioneiro brasileiro.
+              Você pode inserir sua logomarca no cabeçalho, substituir os blocos abaixo por fotos reais
+              e também adicionar seus arquivos para download, como PDF, apostilas, cifras e materiais
+              complementares.
             </p>
           </aside>
         </div>
@@ -794,9 +896,9 @@
 
         <div class="tunings">
           <article class="tuning glass reveal">
-           <div class="photo-slot">
-  <img src="Afinacao-Cebolao.png" alt="Afinação Cebolão">
-</div>
+            <div class="photo-slot" aria-label="Espaço reservado para foto da afinação Cebolão">
+              <div class="photo-label">Espaço para adicionar a foto da afinação Cebolão</div>
+            </div>
 
             <div class="tuning-content">
               <h4 class="tuning-title">Afinação Cebolão</h4>
@@ -826,9 +928,10 @@
           </article>
 
           <article class="tuning glass reveal">
-            <div class="photo-slot">
-  <img src="Afinacao-Rio-Abaixo.png" alt="Afinação Cebolão">
-</div>
+            <div class="photo-slot" aria-label="Espaço reservado para foto da afinação Rio Abaixo">
+              <div class="photo-label">Espaço para adicionar a foto da afinação Rio Abaixo</div>
+            </div>
+
             <div class="tuning-content">
               <h4 class="tuning-title">Afinação Rio Abaixo</h4>
               <p>
@@ -857,9 +960,9 @@
           </article>
 
           <article class="tuning glass reveal">
-           <div class="photo-slot">
-  <img src="Afinacao-Boiadeira.png" alt="Afinação Cebolão">
-</div>
+            <div class="photo-slot" aria-label="Espaço reservado para foto da afinação Boiadeira">
+              <div class="photo-label">Espaço para adicionar a foto da afinação Boiadeira</div>
+            </div>
 
             <div class="tuning-content">
               <h4 class="tuning-title">Afinação Boiadeira</h4>
@@ -889,9 +992,9 @@
           </article>
 
           <article class="tuning glass reveal">
-           <div class="photo-slot">
-  <img src="Afinacao-Cebolao-Menor.png" alt="Afinação Cebolão">
-</div>
+            <div class="photo-slot" aria-label="Espaço reservado para foto da afinação Cebolão Menor">
+              <div class="photo-label">Espaço para adicionar a foto da afinação Cebolão Menor</div>
+            </div>
 
             <div class="tuning-content">
               <h4 class="tuning-title">Afinação Cebolão Menor</h4>
@@ -985,7 +1088,6 @@
         </div>
       </div>
     </section>
-
 
     <section class="section" id="cuidados">
       <div class="container">
