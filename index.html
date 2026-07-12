@@ -4,39 +4,41 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Afinações de Viola Caipira</title>
-  <meta name="description" content="Conheça as principais afinações de viola caipira, músicas famosas em cada afinação, área de downloads e dicas para cuidar bem do seu instrumento." />
-
+  <meta name="description" content="Conheça as principais afinações de viola caipira, músicas famosas, cuidados com o instrumento e espaço para downloads de apostilas." />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bree+Serif&family=Source+Sans+3:wght@400;500;600;700&display=swap" rel="stylesheet">
-
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     :root{
-      --bg: #f5efe5;
-      --bg-soft: #efe4d4;
-      --paper: rgba(255,255,255,0.55);
-      --text: #2e241b;
-      --muted: #6e5a49;
-      --line: rgba(84, 56, 28, 0.18);
-      --accent: #8f2f1c;
-      --accent-2: #c97f39;
-      --accent-3: #5f4b3a;
-      --shadow: 0 20px 60px rgba(67, 39, 11, 0.12);
-      --radius: 22px;
-      --max: 1180px;
+      --bg:#07111f;
+      --bg-soft:#0d1b2f;
+      --panel:#10233d;
+      --panel-2:#13305a;
+      --line:rgba(164, 210, 255, 0.18);
+      --text:#eaf4ff;
+      --muted:#a9c1df;
+      --blue-1:#58b6ff;
+      --blue-2:#2d7fff;
+      --blue-3:#8fd0ff;
+      --accent:#78e1ff;
+      --shadow:0 20px 60px rgba(0,0,0,.35);
+      --radius:22px;
+      --radius-lg:32px;
+      --max:1200px;
+      --header-h:88px;
     }
 
     *{box-sizing:border-box}
     html{scroll-behavior:smooth}
     body{
       margin:0;
-      font-family:"Source Sans 3", sans-serif;
+      font-family:"Inter", sans-serif;
       color:var(--text);
       background:
-        radial-gradient(circle at 10% 20%, rgba(201,127,57,0.10), transparent 0 28%),
-        radial-gradient(circle at 90% 10%, rgba(143,47,28,0.08), transparent 0 24%),
-        linear-gradient(180deg, #f7f2ea 0%, var(--bg) 100%);
-      line-height:1.6;
+        radial-gradient(circle at 15% 20%, rgba(45,127,255,.18), transparent 28%),
+        radial-gradient(circle at 85% 15%, rgba(120,225,255,.10), transparent 22%),
+        radial-gradient(circle at 50% 80%, rgba(88,182,255,.08), transparent 26%),
+        linear-gradient(180deg, #06101d 0%, #081423 35%, #0a1628 100%);
       overflow-x:hidden;
     }
 
@@ -45,148 +47,156 @@
       position:fixed;
       inset:0;
       pointer-events:none;
-      opacity:.18;
       background:
-        linear-gradient(rgba(255,255,255,.03), rgba(255,255,255,.03)),
-        repeating-linear-gradient(
-          90deg,
-          transparent 0,
-          transparent 48px,
-          rgba(95,75,58,.03) 49px,
-          transparent 50px
-        );
-      mix-blend-mode:multiply;
+        linear-gradient(rgba(255,255,255,.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,.03) 1px, transparent 1px);
+      background-size:40px 40px;
+      mask-image:linear-gradient(180deg, rgba(0,0,0,.35), transparent 85%);
+      opacity:.25;
     }
 
+    a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
-    a{text-decoration:none;color:inherit}
 
     .container{
       width:min(calc(100% - 2rem), var(--max));
       margin-inline:auto;
     }
 
-    .topbar{
+    .site-header{
       position:sticky;
       top:0;
       z-index:50;
-      backdrop-filter: blur(12px);
-      background:rgba(245,239,229,0.72);
-      border-bottom:1px solid rgba(84,56,28,0.10);
+      backdrop-filter: blur(18px);
+      background:rgba(7,17,31,.62);
+      border-bottom:1px solid var(--line);
     }
 
-    .topbar-inner{
-      display:grid;
-      grid-template-columns:auto 1fr auto;
+    .nav{
+      min-height:var(--header-h);
+      display:flex;
       align-items:center;
+      justify-content:space-between;
       gap:1rem;
-      min-height:82px;
-    }
-
-    .logo-slot{
-      width:76px;
-      height:76px;
-      border-radius:18px;
-      border:1.5px dashed rgba(143,47,28,0.4);
-      display:grid;
-      place-items:center;
-      background:
-        linear-gradient(180deg, rgba(255,255,255,0.55), rgba(255,255,255,0.18));
-      box-shadow: inset 0 1px 0 rgba(255,255,255,.7);
-      color:var(--accent);
-      font-size:.82rem;
-      text-align:center;
-      font-weight:700;
-      padding:.5rem;
-      overflow:hidden;
-    }
-
-    .logo-slot img{
-      width:100%;
-      height:100%;
-      object-fit:contain;
-      border-radius:18px;
     }
 
     .brand{
+      display:flex;
+      align-items:center;
+      gap:1rem;
+      min-width:0;
+    }
+
+    .logo-slot{
+      width:70px;
+      height:70px;
+      border-radius:20px;
+      border:1px dashed rgba(143,208,255,.45);
+      background:
+        linear-gradient(135deg, rgba(88,182,255,.18), rgba(120,225,255,.08));
+      display:grid;
+      place-items:center;
+      color:var(--muted);
+      font-size:.8rem;
+      text-align:center;
+      padding:.5rem;
+      flex-shrink:0;
+      box-shadow:inset 0 0 0 1px rgba(255,255,255,.03);
+    }
+
+    .brand-copy{
       min-width:0;
     }
 
     .eyebrow{
       display:inline-flex;
       align-items:center;
-      gap:.6rem;
-      color:var(--accent);
-      text-transform:uppercase;
+      gap:.5rem;
+      color:var(--blue-3);
       letter-spacing:.14em;
-      font-size:.74rem;
-      font-weight:800;
+      text-transform:uppercase;
+      font-size:.75rem;
+      font-weight:700;
     }
 
     .eyebrow::before{
       content:"";
-      width:34px;
+      width:22px;
       height:1px;
-      background:currentColor;
-      opacity:.8;
+      background:linear-gradient(90deg, var(--accent), transparent);
     }
 
     .brand h1{
       margin:.15rem 0 0;
-      font-family:"Bree Serif", serif;
-      font-size:clamp(1.1rem, 2vw, 1.45rem);
-      line-height:1.1;
+      font-family:"Bebas Neue", cursive;
+      letter-spacing:.03em;
+      font-size:clamp(1.8rem, 2vw, 2.3rem);
+      line-height:.95;
       font-weight:400;
     }
 
-    .nav{
+    .nav-links{
       display:flex;
-      gap:.4rem;
       flex-wrap:wrap;
+      gap:.55rem;
       justify-content:flex-end;
     }
 
-    .nav a{
-      font-weight:700;
-      color:var(--muted);
-      padding:.7rem .95rem;
+    .nav-links a{
+      padding:.8rem 1rem;
+      border:1px solid transparent;
       border-radius:999px;
-      transition:.28s ease;
+      color:var(--muted);
+      font-weight:600;
+      font-size:.95rem;
+      transition:.25s ease;
     }
 
-    .nav a:hover{
-      color:var(--accent);
-      background:rgba(143,47,28,.06);
-      transform:translateY(-1px);
+    .nav-links a:hover{
+      color:var(--text);
+      border-color:var(--line);
+      background:rgba(255,255,255,.04);
+      transform:translateY(-2px);
     }
 
     .hero{
+      padding:clamp(3rem, 8vw, 7rem) 0 3rem;
       position:relative;
-      padding:clamp(3.5rem, 8vw, 7rem) 0 3rem;
       overflow:hidden;
     }
 
     .hero-grid{
       display:grid;
-      grid-template-columns:1.1fr .9fr;
+      grid-template-columns:1.15fr .85fr;
       gap:2rem;
-      align-items:center;
+      align-items:end;
     }
 
-    .hero-copy h2{
-      margin:0 0 1rem;
-      font-family:"Bree Serif", serif;
-      font-size:clamp(2.4rem, 6vw, 5.4rem);
-      line-height:.95;
-      letter-spacing:-0.03em;
+    .hero-copy{
+      padding:clamp(1rem, 2vw, 2rem) 0;
+    }
+
+    .hero h2{
+      margin:.5rem 0 1rem;
+      font-family:"Bebas Neue", cursive;
+      font-size:clamp(3.3rem, 9vw, 7rem);
+      line-height:.9;
+      letter-spacing:.02em;
+      font-weight:400;
       max-width:10ch;
     }
 
-    .hero-copy p{
-      margin:0;
+    .hero h2 .stroke{
+      color:transparent;
+      -webkit-text-stroke:1px rgba(143,208,255,.65);
+    }
+
+    .hero p{
       max-width:62ch;
       color:var(--muted);
-      font-size:clamp(1rem, 1.7vw, 1.18rem);
+      font-size:clamp(1rem, 1.4vw, 1.15rem);
+      line-height:1.8;
+      margin:0 0 1.6rem;
     }
 
     .hero-actions{
@@ -200,72 +210,77 @@
       appearance:none;
       border:none;
       cursor:pointer;
-      font:inherit;
-      font-weight:800;
-      border-radius:999px;
-      padding:.95rem 1.25rem;
-      transition:.28s ease;
       display:inline-flex;
       align-items:center;
       justify-content:center;
+      gap:.65rem;
+      min-height:52px;
+      padding:0 1.2rem;
+      border-radius:999px;
+      font-weight:800;
+      letter-spacing:.01em;
+      transition:.25s ease;
+      font-family:inherit;
     }
 
     .btn-primary{
-      background:linear-gradient(135deg, var(--accent), #b2452b);
-      color:#fff;
-      box-shadow:0 14px 32px rgba(143,47,28,.24);
+      color:#05101d;
+      background:linear-gradient(135deg, var(--accent), var(--blue-1));
+      box-shadow:0 14px 30px rgba(88,182,255,.28);
     }
 
     .btn-primary:hover{
-      transform:translateY(-2px) scale(1.02);
-      box-shadow:0 18px 36px rgba(143,47,28,.28);
+      transform:translateY(-3px) scale(1.01);
+      box-shadow:0 18px 40px rgba(88,182,255,.34);
     }
 
     .btn-secondary{
-      background:rgba(255,255,255,.55);
       color:var(--text);
-      border:1px solid rgba(84,56,28,.12);
+      background:rgba(255,255,255,.03);
+      border:1px solid var(--line);
       backdrop-filter:blur(10px);
     }
 
     .btn-secondary:hover{
-      transform:translateY(-2px);
-      background:rgba(255,255,255,.82);
+      transform:translateY(-3px);
+      border-color:rgba(143,208,255,.42);
+      background:rgba(255,255,255,.06);
     }
 
-    .hero-art{
+    .hero-visual{
+      min-height:420px;
+      border-radius:var(--radius-lg);
       position:relative;
-      min-height:480px;
-      display:grid;
-      place-items:center;
-    }
-
-    .viola-visual{
-      position:relative;
-      width:min(100%, 460px);
-      aspect-ratio: 4 / 5;
-      border-radius:36px;
+      border:1px solid var(--line);
       background:
-        linear-gradient(145deg, rgba(255,255,255,.5), rgba(255,255,255,.15)),
-        linear-gradient(180deg, #3b2618, #1f140d 60%, #493122);
-      box-shadow: var(--shadow);
-      border:1px solid rgba(255,255,255,.28);
+        linear-gradient(180deg, rgba(143,208,255,.06), rgba(45,127,255,.05)),
+        linear-gradient(135deg, rgba(16,35,61,.95), rgba(6,16,29,.88));
+      box-shadow:var(--shadow);
       overflow:hidden;
+      isolation:isolate;
     }
 
-    .viola-visual::before{
+    .hero-visual::before{
       content:"";
       position:absolute;
-      inset:6% 9% auto auto;
-      width:70%;
-      height:70%;
+      inset:-20% auto auto -10%;
+      width:240px;
+      height:240px;
       border-radius:50%;
-      background:
-        radial-gradient(circle at 35% 35%, #000 0 31%, transparent 31.5%),
-        radial-gradient(circle at 35% 35%, #8f6533 0 43%, #3c2717 43.5% 49%, transparent 49.5%);
-      opacity:.95;
-      transform:translate(4%, 8%);
-      filter:drop-shadow(0 12px 18px rgba(0,0,0,.24));
+      background:radial-gradient(circle, rgba(120,225,255,.35), transparent 65%);
+      filter:blur(10px);
+    }
+
+    .hero-visual::after{
+      content:"";
+      position:absolute;
+      right:-60px;
+      bottom:-60px;
+      width:280px;
+      height:280px;
+      border-radius:50%;
+      background:radial-gradient(circle, rgba(45,127,255,.30), transparent 65%);
+      filter:blur(15px);
     }
 
     .strings{
@@ -273,42 +288,50 @@
       inset:0;
       display:grid;
       grid-template-columns:repeat(10, 1fr);
-      padding:0 20%;
-      pointer-events:none;
+      gap:0;
+      padding:1.2rem 2rem;
+      z-index:1;
     }
 
     .strings span{
-      justify-self:center;
       width:2px;
+      justify-self:center;
       height:100%;
-      background:linear-gradient(180deg, rgba(255,255,255,.85), rgba(255,255,255,.22));
-      box-shadow:0 0 0.5px rgba(255,255,255,.8);
-      opacity:.88;
+      background:linear-gradient(180deg, rgba(255,255,255,.7), rgba(255,255,255,.18) 70%, rgba(255,255,255,.55));
+      opacity:.75;
+      box-shadow:0 0 14px rgba(255,255,255,.12);
     }
 
-    .hero-badge{
+    .sound-hole{
       position:absolute;
-      left:-1rem;
-      bottom:1.4rem;
-      background:rgba(255,248,241,.72);
-      border:1px solid rgba(84,56,28,.12);
-      backdrop-filter:blur(10px);
-      box-shadow:var(--shadow);
-      border-radius:20px;
-      padding:1rem 1.1rem;
-      max-width:220px;
+      width:260px;
+      height:260px;
+      border-radius:50%;
+      left:50%;
+      top:54%;
+      transform:translate(-50%,-50%);
+      background:
+        radial-gradient(circle at 50% 50%, #000 0 38%, #0b0b0b 39% 45%, #8a6437 46% 49%, #1a1209 50% 58%, transparent 59%);
+      opacity:.9;
+      z-index:0;
+      filter:drop-shadow(0 10px 30px rgba(0,0,0,.35));
     }
 
-    .hero-badge strong{
-      display:block;
-      color:var(--accent);
-      font-size:1.4rem;
-      line-height:1;
-      margin-bottom:.2rem;
+    .visual-label{
+      position:absolute;
+      left:1rem;
+      right:1rem;
+      bottom:1rem;
+      display:flex;
+      justify-content:space-between;
+      gap:1rem;
+      z-index:2;
+      color:var(--muted);
+      font-size:.85rem;
     }
 
     .section{
-      padding:clamp(2.5rem, 5vw, 5rem) 0;
+      padding:clamp(2rem, 6vw, 5rem) 0;
     }
 
     .section-head{
@@ -316,96 +339,56 @@
       grid-template-columns:1fr auto;
       gap:1rem;
       align-items:end;
-      margin-bottom:1.8rem;
+      margin-bottom:1.6rem;
     }
 
     .section-head h3{
-      margin:0;
-      font-family:"Bree Serif", serif;
-      font-size:clamp(1.8rem, 3vw, 3rem);
-      line-height:1;
+      margin:.35rem 0 0;
+      font-family:"Bebas Neue", cursive;
+      font-size:clamp(2.3rem, 5vw, 4rem);
+      line-height:.92;
+      font-weight:400;
+      letter-spacing:.03em;
     }
 
     .section-head p{
       margin:0;
       color:var(--muted);
-      max-width:52ch;
+      max-width:62ch;
+      line-height:1.8;
     }
 
     .divider{
-      width:100%;
       height:1px;
-      background:linear-gradient(90deg, var(--accent), rgba(143,47,28,.14));
+      width:100%;
+      background:linear-gradient(90deg, rgba(120,225,255,.85), rgba(45,127,255,.25), transparent);
       margin-top:1rem;
-    }
-
-    .intro-panel{
-      display:grid;
-      grid-template-columns:1.15fr .85fr;
-      gap:1.4rem;
-      align-items:stretch;
-    }
-
-    .glass{
-      background:var(--paper);
-      border:1px solid rgba(84,56,28,0.10);
-      backdrop-filter:blur(10px);
-      box-shadow:var(--shadow);
-      border-radius:var(--radius);
-    }
-
-    .intro-text{
-      padding:1.6rem;
-    }
-
-    .intro-text p{
-      margin:0;
-      font-size:1.05rem;
-      color:var(--muted);
-    }
-
-    .intro-note{
-      padding:1.6rem;
-      display:grid;
-      gap:.85rem;
-      align-content:start;
-      background:
-        linear-gradient(180deg, rgba(143,47,28,.07), rgba(201,127,57,.08));
-    }
-
-    .intro-note h4,
-    .care-box h4,
-    .download-highlight h4{
-      margin:0;
-      font-family:"Bree Serif", serif;
-      font-size:1.4rem;
-      line-height:1.1;
-    }
-
-    .intro-note p,
-    .download-highlight p{
-      margin:0;
-      color:var(--muted);
     }
 
     .tunings{
       display:grid;
-      gap:1.4rem;
+      gap:1.3rem;
+      margin-top:2rem;
     }
 
     .tuning{
       display:grid;
-      grid-template-columns: .95fr 1.05fr;
+      grid-template-columns:1.05fr .95fr;
       gap:1.2rem;
       align-items:stretch;
       padding:1rem;
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      backdrop-filter:blur(12px);
+      box-shadow:var(--shadow);
     }
 
     .tuning:nth-child(even){
-      grid-template-columns:1.05fr .95fr;
+      grid-template-columns:.95fr 1.05fr;
     }
 
-    .tuning:nth-child(even) .photo-slot{
+    .tuning:nth-child(even) .tuning-media{
       order:2;
     }
 
@@ -413,403 +396,423 @@
       order:1;
     }
 
-    .photo-slot{
+    .tuning-media{
       min-height:320px;
-      border-radius:24px;
+      border-radius:22px;
       overflow:hidden;
+      border:1px solid rgba(143,208,255,.18);
       position:relative;
       background:
-        linear-gradient(135deg, rgba(143,47,28,.18), rgba(201,127,57,.14)),
-        linear-gradient(180deg, #4f3524, #22160f);
-      border:1px solid rgba(255,255,255,.22);
-      isolation:isolate;
+        linear-gradient(135deg, rgba(88,182,255,.16), rgba(120,225,255,.05)),
+        linear-gradient(180deg, #0e2037, #0a1728);
     }
 
-    .photo-slot::before{
-      content:"";
+    .upload-placeholder{
       position:absolute;
       inset:0;
-      background:
-        radial-gradient(circle at 25% 40%, rgba(0,0,0,.85) 0 14%, transparent 14.5%),
-        radial-gradient(circle at 25% 40%, rgba(214,156,83,.75) 0 24%, rgba(52,33,20,.95) 24.6% 29%, transparent 29.5%);
-      opacity:.95;
+      display:grid;
+      place-items:center;
+      padding:1.5rem;
     }
 
-    .photo-slot::after{
-      content:"";
-      position:absolute;
-      inset:0;
+    .upload-box{
+      width:min(100%, 440px);
+      min-height:240px;
+      border-radius:24px;
+      border:1.5px dashed rgba(143,208,255,.35);
       background:
-        repeating-linear-gradient(
-          90deg,
-          transparent 0 10.5%,
-          rgba(255,255,255,.78) 10.8%,
-          transparent 11.2%
-        );
-      opacity:.75;
-      mix-blend-mode:screen;
+        radial-gradient(circle at 50% 20%, rgba(120,225,255,.10), transparent 35%),
+        rgba(255,255,255,.02);
+      display:grid;
+      place-items:center;
+      text-align:center;
+      padding:1.5rem;
+      transition:.25s ease;
     }
 
-    .photo-slot img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
+    .tuning:hover .upload-box{
+      transform:scale(1.015);
+      border-color:rgba(143,208,255,.58);
+      background:
+        radial-gradient(circle at 50% 20%, rgba(120,225,255,.14), transparent 35%),
+        rgba(255,255,255,.03);
+    }
+
+    .upload-box strong{
       display:block;
-      position:relative;
-      z-index:3;
+      font-size:1rem;
+      margin-bottom:.4rem;
     }
 
-    .photo-label{
+    .upload-box span{
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.6;
+    }
+
+    .mini-strings{
       position:absolute;
-      left:1rem;
-      bottom:1rem;
-      z-index:4;
-      background:rgba(255,247,240,.80);
-      border:1px dashed rgba(143,47,28,.42);
-      color:var(--accent);
-      border-radius:16px;
-      padding:.8rem .95rem;
-      font-weight:800;
-      backdrop-filter:blur(8px);
-      max-width:240px;
+      inset:0;
+      display:grid;
+      grid-template-columns:repeat(10, 1fr);
+      padding:1rem 1.5rem;
+      pointer-events:none;
+      opacity:.45;
+    }
+
+    .mini-strings i{
+      width:1px;
+      justify-self:center;
+      height:100%;
+      background:linear-gradient(180deg, rgba(255,255,255,.5), rgba(255,255,255,.1));
+      display:block;
     }
 
     .tuning-content{
-      padding:1rem .6rem 1rem .4rem;
-      display:grid;
-      align-content:start;
-      gap:1rem;
+      padding:clamp(.6rem, 1vw, 1rem);
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
     }
 
-    .tuning-title{
-      margin:0;
-      font-family:"Bree Serif", serif;
-      font-size:clamp(1.7rem, 3vw, 2.6rem);
-      line-height:1;
-      position:relative;
-      padding-bottom:.75rem;
-    }
-
-    .tuning-title::after{
-      content:"";
-      position:absolute;
-      left:0;
-      bottom:0;
-      width:min(240px, 60%);
-      height:3px;
+    .tuning-tag{
+      display:inline-flex;
+      width:max-content;
+      align-items:center;
+      gap:.5rem;
+      padding:.5rem .8rem;
       border-radius:999px;
-      background:linear-gradient(90deg, var(--accent), transparent);
-    }
-
-    .tuning-content p{
-      margin:0;
-      color:var(--muted);
-      font-size:1.05rem;
-    }
-
-    .tuning-setup{
-      display:grid;
-      grid-template-columns:repeat(5, minmax(0,1fr));
-      gap:.7rem;
-      margin-top:.2rem;
-    }
-
-    .pair{
-      padding:.85rem .7rem;
-      border-radius:18px;
-      background:rgba(255,255,255,.5);
-      border:1px solid rgba(84,56,28,.10);
-      text-align:center;
-    }
-
-    .pair small{
-      display:block;
+      color:var(--blue-3);
+      background:rgba(88,182,255,.10);
+      border:1px solid rgba(88,182,255,.18);
+      font-size:.78rem;
       text-transform:uppercase;
-      letter-spacing:.08em;
-      color:var(--muted);
+      letter-spacing:.12em;
       font-weight:800;
-      font-size:.72rem;
     }
 
-    .pair strong{
-      display:block;
-      margin-top:.2rem;
-      font-size:1.02rem;
+    .tuning h4{
+      margin:.9rem 0 .8rem;
+      font-family:"Bebas Neue", cursive;
+      font-size:clamp(2rem, 4vw, 3rem);
+      line-height:.95;
+      font-weight:400;
+      letter-spacing:.03em;
+    }
+
+    .tuning p{
+      margin:0 0 1rem;
+      color:var(--muted);
+      line-height:1.8;
+      font-size:1rem;
+    }
+
+    .notes{
+      display:flex;
+      flex-wrap:wrap;
+      gap:.6rem;
+      margin:.25rem 0 1rem;
+    }
+
+    .note{
+      padding:.75rem .95rem;
+      border-radius:14px;
+      background:rgba(255,255,255,.04);
+      border:1px solid rgba(143,208,255,.15);
       color:var(--text);
+      font-weight:700;
+      font-size:.92rem;
+      transition:.2s ease;
+    }
+
+    .note:hover{
+      transform:translateY(-2px);
+      background:rgba(255,255,255,.07);
+      border-color:rgba(143,208,255,.35);
     }
 
     .songs{
-      padding-left:1.1rem;
-      margin:.1rem 0 0;
-      color:var(--text);
+      margin-top:.5rem;
     }
 
-    .songs li{
-      margin:.35rem 0;
-    }
-
-    .songs li::marker{
-      color:var(--accent);
-    }
-
-    .downloads-layout{
-      display:grid;
-      grid-template-columns:.9fr 1.1fr;
-      gap:1.3rem;
-      align-items:start;
-    }
-
-    .download-highlight{
-      padding:1.5rem;
-      background:
-        linear-gradient(180deg, rgba(201,127,57,.10), rgba(143,47,28,.04));
-    }
-
-    .download-grid{
-      display:grid;
-      gap:1rem;
-    }
-
-    .download-item{
-      display:grid;
-      grid-template-columns:auto 1fr auto;
-      gap:1rem;
-      align-items:center;
-      padding:1.1rem 1.15rem;
-      border-radius:22px;
-      background:rgba(255,255,255,.46);
-      border:1px solid rgba(84,56,28,.08);
-      box-shadow:var(--shadow);
-    }
-
-    .download-icon{
-      width:54px;
-      height:54px;
-      border-radius:16px;
-      display:grid;
-      place-items:center;
-      background:linear-gradient(135deg, rgba(143,47,28,.14), rgba(201,127,57,.16));
-      color:var(--accent);
-      font-weight:900;
+    .songs strong{
+      display:block;
+      margin-bottom:.6rem;
+      color:var(--blue-3);
       font-size:.92rem;
-      border:1px solid rgba(143,47,28,.10);
+      letter-spacing:.08em;
+      text-transform:uppercase;
     }
 
-    .download-meta h5{
+    .songs ul{
       margin:0;
-      font-size:1.08rem;
-      color:var(--text);
-    }
-
-    .download-meta p{
-      margin:.1rem 0 0;
+      padding-left:1.1rem;
       color:var(--muted);
+      line-height:1.8;
     }
 
-    .download-btn{
-      padding:.78rem 1rem;
-      border-radius:999px;
-      background:linear-gradient(135deg, var(--accent), #b2452b);
-      color:#fff;
-      font-weight:800;
-      transition:.28s ease;
-      box-shadow:0 12px 24px rgba(143,47,28,.18);
-      white-space:nowrap;
-    }
-
-    .download-btn:hover{
-      transform:translateY(-2px) scale(1.02);
-      box-shadow:0 16px 28px rgba(143,47,28,.24);
-    }
-
-    .care-layout{
+    .care-grid{
       display:grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap:1.3rem;
+      grid-template-columns:1.1fr .9fr;
+      gap:1.4rem;
       align-items:start;
     }
 
-    .care-box{
-      padding:1.5rem;
-      position:sticky;
-      top:105px;
-      background:
-        linear-gradient(180deg, rgba(201,127,57,.10), rgba(143,47,28,.04));
-    }
-
-    .care-box p{
-      margin:.8rem 0 0;
-      color:var(--muted);
+    .care-panel,
+    .downloads-panel{
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:linear-gradient(180deg, rgba(255,255,255,.03), rgba(255,255,255,.015));
+      box-shadow:var(--shadow);
+      padding:1.2rem;
+      backdrop-filter:blur(12px);
     }
 
     .care-list{
       display:grid;
-      gap:1rem;
+      gap:.9rem;
+      margin-top:1rem;
     }
 
     .care-item{
-      padding:1.2rem 1.25rem;
-      border-radius:22px;
-      background:rgba(255,255,255,.46);
-      border:1px solid rgba(84,56,28,.08);
-      box-shadow:var(--shadow);
+      display:grid;
+      grid-template-columns:auto 1fr;
+      gap:.9rem;
+      align-items:start;
+      padding:1rem;
+      border-radius:20px;
+      background:rgba(255,255,255,.025);
+      border:1px solid rgba(143,208,255,.10);
+    }
+
+    .care-num{
+      width:42px;
+      height:42px;
+      border-radius:50%;
+      display:grid;
+      place-items:center;
+      font-weight:800;
+      color:#06101d;
+      background:linear-gradient(135deg, var(--accent), var(--blue-1));
+      box-shadow:0 10px 20px rgba(88,182,255,.25);
     }
 
     .care-item h5{
-      margin:0 0 .35rem;
-      font-size:1.14rem;
-      color:var(--accent);
+      margin:.15rem 0 .35rem;
+      font-size:1rem;
     }
 
     .care-item p{
       margin:0;
       color:var(--muted);
+      line-height:1.75;
+      font-size:.96rem;
+    }
+
+    .downloads-list{
+      display:grid;
+      gap:.9rem;
+      margin-top:1rem;
+    }
+
+    .download-item{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:1rem;
+      padding:1rem;
+      border-radius:20px;
+      background:rgba(255,255,255,.025);
+      border:1px solid rgba(143,208,255,.10);
+      transition:.25s ease;
+    }
+
+    .download-item:hover{
+      transform:translateY(-3px);
+      border-color:rgba(143,208,255,.32);
+      background:rgba(255,255,255,.04);
+    }
+
+    .download-item h5{
+      margin:0 0 .3rem;
+      font-size:1rem;
+    }
+
+    .download-item p{
+      margin:0;
+      color:var(--muted);
+      font-size:.92rem;
+      line-height:1.6;
+    }
+
+    .download-btn{
+      flex-shrink:0;
+      min-width:132px;
+    }
+
+    .cta{
+      padding-bottom:5rem;
+    }
+
+    .cta-box{
+      border-radius:34px;
+      border:1px solid var(--line);
+      background:
+        radial-gradient(circle at top right, rgba(120,225,255,.12), transparent 25%),
+        linear-gradient(135deg, rgba(19,48,90,.88), rgba(8,20,35,.96));
+      box-shadow:var(--shadow);
+      padding:clamp(1.5rem, 4vw, 3rem);
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:1rem;
+      align-items:center;
+    }
+
+    .cta-box h3{
+      margin:0 0 .4rem;
+      font-family:"Bebas Neue", cursive;
+      font-size:clamp(2rem, 4vw, 3.6rem);
+      line-height:.95;
+      font-weight:400;
+      letter-spacing:.03em;
+    }
+
+    .cta-box p{
+      margin:0;
+      color:var(--muted);
+      max-width:58ch;
+      line-height:1.8;
     }
 
     footer{
-      padding:2.4rem 0 3rem;
+      padding:1.5rem 0 3rem;
+      color:var(--muted);
+      border-top:1px solid rgba(143,208,255,.10);
     }
 
-    .footer-panel{
-      display:grid;
+    .footer-row{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
       gap:1rem;
-      padding:1.4rem;
-      border-radius:26px;
-      background:
-        linear-gradient(135deg, rgba(143,47,28,.92), rgba(95,75,58,.95));
-      color:#fffaf4;
-      box-shadow:var(--shadow);
-    }
-
-    .footer-panel h6{
-      margin:0;
-      font-family:"Bree Serif", serif;
-      font-size:1.5rem;
-      font-weight:400;
-    }
-
-    .footer-panel p{
-      margin:0;
-      color:rgba(255,250,244,.82);
-      max-width:68ch;
+      flex-wrap:wrap;
     }
 
     .reveal{
       opacity:0;
-      transform:translateY(26px);
+      transform:translateY(24px);
       transition:opacity .8s ease, transform .8s ease;
     }
 
     .reveal.visible{
       opacity:1;
-      transform:none;
+      transform:translateY(0);
     }
 
     .stagger > *{
       opacity:0;
       transform:translateY(22px);
-      animation:rise .8s ease forwards;
+      animation:rise .75s ease forwards;
     }
 
-    .stagger > *:nth-child(1){animation-delay:.08s}
-    .stagger > *:nth-child(2){animation-delay:.18s}
-    .stagger > *:nth-child(3){animation-delay:.28s}
-    .stagger > *:nth-child(4){animation-delay:.38s}
-    .stagger > *:nth-child(5){animation-delay:.48s}
+    .stagger > *:nth-child(1){animation-delay:.05s}
+    .stagger > *:nth-child(2){animation-delay:.15s}
+    .stagger > *:nth-child(3){animation-delay:.25s}
+    .stagger > *:nth-child(4){animation-delay:.35s}
+    .stagger > *:nth-child(5){animation-delay:.45s}
+    .stagger > *:nth-child(6){animation-delay:.55s}
 
     @keyframes rise{
-      to{
-        opacity:1;
-        transform:none;
-      }
+      to{opacity:1;transform:translateY(0)}
     }
 
     @media (max-width: 980px){
       .hero-grid,
-      .intro-panel,
       .tuning,
       .tuning:nth-child(even),
-      .care-layout,
-      .downloads-layout,
-      .section-head{
+      .care-grid,
+      .cta-box{
         grid-template-columns:1fr;
       }
 
-      .tuning:nth-child(even) .photo-slot,
+      .tuning:nth-child(even) .tuning-media,
       .tuning:nth-child(even) .tuning-content{
         order:initial;
       }
 
-      .care-box{
-        position:relative;
-        top:auto;
-      }
-
-      .hero-copy h2{
-        max-width:12ch;
-      }
-    }
-
-    @media (max-width: 720px){
-      .topbar-inner{
+      .section-head{
         grid-template-columns:1fr;
-        padding:.8rem 0 1rem;
       }
 
       .nav{
+        align-items:flex-start;
+        padding:.9rem 0;
+        flex-direction:column;
+      }
+
+      .nav-links{
+        width:100%;
         justify-content:flex-start;
       }
 
-      .logo-slot{
-        width:88px;
-        height:88px;
-      }
-
-      .hero-art{
+      .hero-visual{
         min-height:360px;
       }
+    }
 
-      .viola-visual{
-        aspect-ratio: 5 / 6;
+    @media (max-width: 640px){
+      .container{
+        width:min(calc(100% - 1rem), var(--max));
       }
 
-      .tuning-setup{
-        grid-template-columns:repeat(2, minmax(0,1fr));
+      .logo-slot{
+        width:62px;
+        height:62px;
+        border-radius:18px;
       }
 
-      .pair:last-child{
-        grid-column:1 / -1;
+      .nav-links a{
+        padding:.72rem .9rem;
+        font-size:.9rem;
+      }
+
+      .hero h2{
+        max-width:unset;
+      }
+
+      .visual-label{
+        flex-direction:column;
       }
 
       .download-item{
-        grid-template-columns:1fr;
-        align-items:start;
+        flex-direction:column;
+        align-items:flex-start;
       }
 
       .download-btn{
         width:100%;
-        text-align:center;
       }
     }
   </style>
 </head>
 <body>
-  <header class="topbar">
-    <div class="container topbar-inner">
-     <img src="sesc logo.png" alt="Logo da empresa">
-</div>
-
-
+  <header class="site-header">
+    <div class="container nav">
       <div class="brand">
-        <span class="eyebrow">Viola Caipira</span>
-        <h1>Guia de Afinações e Cuidados</h1>
+        <div class="logo-slot" aria-label="Espaço reservado para logomarca">
+          Sua<br>Logo
+        </div>
+        <div class="brand-copy">
+          <span class="eyebrow">Portal de Estudos</span>
+          <h1>Viola Caipira</h1>
+        </div>
       </div>
 
-      <nav class="nav" aria-label="Navegação principal">
+      <nav class="nav-links" aria-label="Navegação principal">
         <a href="#inicio">Início</a>
         <a href="#afinacoes">Afinações</a>
-        <a href="#downloads">Downloads</a>
         <a href="#cuidados">Cuidados</a>
+        <a href="#downloads">Apostilas</a>
       </nav>
     </div>
   </header>
@@ -818,65 +821,30 @@
     <section class="hero" id="inicio">
       <div class="container hero-grid">
         <div class="hero-copy stagger">
-          <span class="eyebrow">Tradição brasileira</span>
-          <h2>Conheça as principais afinações de viola caipira</h2>
+          <span class="eyebrow">Material moderno e organizado</span>
+          <h2>Conheça as principais <span class="stroke">afinações</span> de viola caipira</h2>
           <p>
-            A viola caipira é um instrumento musical tradicional brasileiro, muito popular na música
-            sertaneja e em outras formas de música folclórica. Uma das características mais marcantes
-            é a variedade de afinações, que mudam conforme o estilo e a região.
+            A viola caipira é um instrumento musical tradicional brasileiro, muito popular na música sertaneja
+            e em diversas expressões da cultura folclórica. Nesta web, você encontra as principais afinações,
+            músicas famosas em cada uma delas, espaço para inserir suas imagens e uma área dedicada para
+            downloads de apostilas.
           </p>
           <div class="hero-actions">
             <a class="btn btn-primary" href="#afinacoes">Explorar afinações</a>
-            <a class="btn btn-secondary" href="#downloads">Área de downloads</a>
+            <a class="btn btn-secondary" href="#downloads">Ver apostilas</a>
           </div>
         </div>
 
-        <div class="hero-art reveal" aria-hidden="true">
-          <div class="viola-visual">
-            <div class="strings">
-              <span></span><span></span><span></span><span></span><span></span>
-              <span></span><span></span><span></span><span></span><span></span>
-            </div>
+        <div class="hero-visual reveal" aria-hidden="true">
+          <div class="sound-hole"></div>
+          <div class="strings">
+            <span></span><span></span><span></span><span></span><span></span>
+            <span></span><span></span><span></span><span></span><span></span>
           </div>
-          <div class="hero-badge">
-            <strong>4</strong>
-            afinações principais apresentadas neste guia
+          <div class="visual-label">
+            <span>Visual temático em tons de azul</span>
+            <span>Substitua pelos seus conteúdos e imagens</span>
           </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <h3>Introdução</h3>
-            <div class="divider"></div>
-          </div>
-          <p>
-            Neste conteúdo, você poderá explorar novos sons, ampliar seu repertório musical e entender
-            melhor como cada afinação influencia a sonoridade da viola caipira.
-          </p>
-        </div>
-
-        <div class="intro-panel">
-          <article class="intro-text glass reveal">
-            <p>
-              Se você já toca viola ou está começando agora, conhecer diferentes afinações é uma forma
-              de descobrir novas possibilidades musicais. Algumas são vibrantes e marcantes, outras
-              soam mais graves, alegres ou melancólicas. Cada uma delas carrega um pedaço da cultura
-              regional brasileira.
-            </p>
-          </article>
-
-          <aside class="intro-note glass reveal">
-            <h4>Espaço para personalização</h4>
-            <p>
-              Você pode inserir sua logomarca no cabeçalho, substituir os blocos abaixo por fotos reais
-              e também adicionar seus arquivos para download, como PDF, apostilas, cifras e materiais
-              complementares.
-            </p>
-          </aside>
         </div>
       </div>
     </section>
@@ -885,211 +853,186 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <h3>Principais afinações</h3>
-            <div class="divider"></div>
+            <span class="eyebrow">Afinações principais</span>
+            <h3>Estude, compare e experimente novos timbres</h3>
           </div>
           <p>
-            Confira as afinações mais conhecidas da viola caipira, suas características e exemplos de
-            músicas famosas relacionadas a cada uma delas.
+            As afinações abaixo foram organizadas com base nas informações do material enviado. Cada bloco já possui
+            um espaço reservado para você adicionar a foto correspondente da afinação.
           </p>
         </div>
+        <div class="divider"></div>
 
         <div class="tunings">
-          <article class="tuning glass reveal">
-            <div class="photo-slot" aria-label="Espaço reservado para foto da afinação Cebolão">
-             <div class="photo-slot">
-  <img src="Afinacao-Cebolao.png" alt="Afinação Cebolão">
-</div>
+          <article class="tuning reveal">
+            <div class="tuning-media">
+              <div class="mini-strings" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="upload-placeholder">
+                <div class="upload-box">
+                  <div>
+                    <strong>Espaço para foto da Afinação Cebolão</strong>
+                    <span>Substitua esta área por uma imagem da afinação. Você pode inserir uma foto da viola com os pares identificados.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="tuning-content">
-              <h4 class="tuning-title">Afinação Cebolão</h4>
+              <span class="tuning-tag">Afinação tradicional</span>
+              <h4>Afinação Cebolão</h4>
               <p>
-                A afinação Cebolão é uma das mais tradicionais e difundidas no Brasil. Sua sonoridade é
-                marcante e vibrante, sendo amplamente utilizada em estilos como moda de viola, pagode,
-                cateretê, entre outros.
+                A afinação Cebolão é uma das mais tradicionais e difundidas no Brasil. Sua sonoridade é marcante
+                e vibrante, sendo amplamente utilizada em estilos da música caipira como moda de viola, pagode
+                e cateretê.
               </p>
 
-              <div class="tuning-setup" aria-label="Exemplo de pares da afinação Cebolão">
-                <div class="pair"><small>5º par</small><strong>Si “B”</strong></div>
-                <div class="pair"><small>4º par</small><strong>Mi “E”</strong></div>
-                <div class="pair"><small>3º par</small><strong>Sol# “G#”</strong></div>
-                <div class="pair"><small>2º par</small><strong>Si “B”</strong></div>
-                <div class="pair"><small>1º par</small><strong>Mi “E”</strong></div>
+              <div class="notes" aria-label="Notas da afinação Cebolão">
+                <span class="note">5º par: Si</span>
+                <span class="note">4º par: Mi</span>
+                <span class="note">3º par: Sol♯</span>
+                <span class="note">2º par: Si</span>
+                <span class="note">1º par: Mi</span>
               </div>
 
-              <div>
-                <strong>Músicas famosas com essa afinação:</strong>
-                <ul class="songs">
-                  <li>"Romaria" - Renato Teixeira</li>
-                  <li>"Cabocla Tereza" - Tião Carreiro e Pardinho</li>
-                  <li>"Menino da Porteira" - Teddy Vieira e Luizinho</li>
+              <div class="songs">
+                <strong>Músicas famosas</strong>
+                <ul>
+                  <li>"Romaria" — Renato Teixeira</li>
+                  <li>"Cabocla Tereza" — Tião Carreiro e Pardinho</li>
+                  <li>"Menino da Porteira" — Teddy Vieira e Luizinho</li>
                 </ul>
               </div>
             </div>
           </article>
 
-          <article class="tuning glass reveal">
-            <div class="photo-slot" aria-label="Espaço reservado para foto da afinação Rio Abaixo">
-              <div class="photo-label">Espaço para adicionar a foto da afinação Rio Abaixo</div>
+          <article class="tuning reveal">
+            <div class="tuning-media">
+              <div class="mini-strings" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="upload-placeholder">
+                <div class="upload-box">
+                  <div>
+                    <strong>Espaço para foto da Afinação Rio Abaixo</strong>
+                    <span>Adicione aqui a imagem da afinação para complementar o estudo visual do instrumento.</span>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="tuning-content">
-              <h4 class="tuning-title">Afinação Rio Abaixo</h4>
+              <span class="tuning-tag">Região Sul</span>
+              <h4>Afinação Rio Abaixo</h4>
               <p>
-                A afinação Rio Abaixo é muito popular na região sul do país, especialmente no estado do
-                Paraná. Ela possui uma sonoridade mais grave e melodiosa do que outras afinações da
-                viola caipira, com raízes na cultura gaúcha e nas tradições dos tropeiros.
+                Muito popular na região sul do país, especialmente no Paraná, a afinação Rio Abaixo possui
+                uma sonoridade mais grave e melodiosa. Suas raízes estão ligadas à cultura gaúcha e às tradições
+                dos tropeiros que atravessavam a região.
               </p>
 
-              <div class="tuning-setup" aria-label="Exemplo de pares da afinação Rio Abaixo">
-                <div class="pair"><small>5º par</small><strong>Sol “G”</strong></div>
-                <div class="pair"><small>4º par</small><strong>Ré “D”</strong></div>
-                <div class="pair"><small>3º par</small><strong>Sol “G”</strong></div>
-                <div class="pair"><small>2º par</small><strong>Si “B”</strong></div>
-                <div class="pair"><small>1º par</small><strong>Ré “D”</strong></div>
+              <div class="notes" aria-label="Notas da afinação Rio Abaixo">
+                <span class="note">5º par: Sol</span>
+                <span class="note">4º par: Ré</span>
+                <span class="note">3º par: Sol</span>
+                <span class="note">2º par: Si</span>
+                <span class="note">1º par: Ré</span>
               </div>
 
-              <div>
-                <strong>Músicas famosas com essa afinação:</strong>
-                <ul class="songs">
-                  <li>"Asa Branca" - Luiz Gonzaga</li>
-                  <li>"Boiadeiro" - Paulo Vanzolini</li>
-                  <li>"Chico Mineiro" - Tonico e Tinoco</li>
+              <div class="songs">
+                <strong>Músicas famosas</strong>
+                <ul>
+                  <li>"Asa Branca" — Luiz Gonzaga</li>
+                  <li>"Boiadeiro" — Paulo Vanzolini</li>
+                  <li>"Chico Mineiro" — Tonico e Tinoco</li>
                 </ul>
               </div>
             </div>
           </article>
 
-          <article class="tuning glass reveal">
-            <div class="photo-slot" aria-label="Espaço reservado para foto da afinação Boiadeira">
-              <div class="photo-slot">
-  <img src="Afinacao-Boiadeira.png" alt="Afinação Boiadera">
-</div>
-
+          <article class="tuning reveal">
+            <div class="tuning-media">
+              <div class="mini-strings" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="upload-placeholder">
+                <div class="upload-box">
+                  <div>
+                    <strong>Espaço para foto da Afinação Boiadeira</strong>
+                    <span>Reserve esta área para a imagem da afinação usada nas festas populares e competições de viola.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="tuning-content">
-              <h4 class="tuning-title">Afinação Boiadeira</h4>
+              <span class="tuning-tag">Nordeste do Brasil</span>
+              <h4>Afinação Boiadeira</h4>
               <p>
-                A afinação Boiadeira é amplamente usada no nordeste do Brasil, onde também é conhecida
-                como a “afinação do vaqueiro”. Sua sonoridade é mais aguda e alegre do que outras
-                afinações, sendo tradicionalmente utilizada por cantadores em festas populares e
-                competições de viola.
+                Amplamente usada no nordeste do Brasil, a afinação Boiadeira também é conhecida como
+                a “afinação do vaqueiro”. Sua sonoridade é mais aguda e alegre do que outras afinações
+                da viola caipira.
               </p>
 
-              <div class="tuning-setup" aria-label="Exemplo de pares da afinação Boiadeira">
-                <div class="pair"><small>5º par</small><strong>Sol “G”</strong></div>
-                <div class="pair"><small>4º par</small><strong>Ré “D”</strong></div>
-                <div class="pair"><small>3º par</small><strong>Fá# “F#”</strong></div>
-                <div class="pair"><small>2º par</small><strong>Lá “A”</strong></div>
-                <div class="pair"><small>1º par</small><strong>Ré “D”</strong></div>
+              <div class="notes" aria-label="Notas da afinação Boiadeira">
+                <span class="note">5º par: Sol</span>
+                <span class="note">4º par: Ré</span>
+                <span class="note">3º par: Fá♯</span>
+                <span class="note">2º par: Lá</span>
+                <span class="note">1º par: Ré</span>
               </div>
 
-              <div>
-                <strong>Músicas famosas com essa afinação:</strong>
-                <ul class="songs">
-                  <li>"Cuitelinho" - Paulo Vanzolini</li>
-                  <li>"Chalana" - Mário Zan e Arlindo Pinto</li>
+              <div class="songs">
+                <strong>Músicas famosas</strong>
+                <ul>
+                  <li>"Cuitelinho" — Paulo Vanzolini</li>
+                  <li>"Chalana" — Mário Zan e Arlindo Pinto</li>
                 </ul>
               </div>
             </div>
           </article>
 
-          <article class="tuning glass reveal">
-            <div class="photo-slot" aria-label="Espaço reservado para foto da afinação Cebolão Menor">
-             <div class="photo-slot">
-  <img src="Afinacao-Cebolao-Menor.png" alt="Afinação Cebolão Menor">
-</div>
-
+          <article class="tuning reveal">
+            <div class="tuning-media">
+              <div class="mini-strings" aria-hidden="true">
+                <i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+              </div>
+              <div class="upload-placeholder">
+                <div class="upload-box">
+                  <div>
+                    <strong>Espaço para foto da Afinação Cebolão Menor</strong>
+                    <span>Adicione a imagem desta variação para mostrar visualmente a posição e referência das cordas.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="tuning-content">
-              <h4 class="tuning-title">Afinação Cebolão Menor</h4>
+              <span class="tuning-tag">Variação melancólica</span>
+              <h4>Afinação Cebolão Menor</h4>
               <p>
-                A afinação Cebolão Menor é uma variação da afinação Cebolão, criada para se adequar a
-                músicas que pedem uma sonoridade mais melancólica. Seu timbre é mais suave e
-                introspectivo, muito utilizado em composições sentimentais e românticas.
+                A afinação Cebolão Menor é uma variação da Cebolão tradicional, criada para se adequar a músicas
+                que pedem uma sonoridade mais melancólica. Ela é mais suave e introspectiva, sendo muito utilizada
+                em canções sentimentais e românticas.
               </p>
 
-              <div class="tuning-setup" aria-label="Exemplo de pares da afinação Cebolão Menor">
-                <div class="pair"><small>5º par</small><strong>Sol “G”</strong></div>
-                <div class="pair"><small>4º par</small><strong>Si♭ “Bb”</strong></div>
-                <div class="pair"><small>3º par</small><strong>Ré “D”</strong></div>
-                <div class="pair"><small>2º par</small><strong>Sol “G”</strong></div>
-                <div class="pair"><small>1º par</small><strong>Si♭ “Bb”</strong></div>
+              <div class="notes" aria-label="Notas da afinação Cebolão Menor">
+                <span class="note">5º par: Sol</span>
+                <span class="note">4º par: Si♭</span>
+                <span class="note">3º par: Ré</span>
+                <span class="note">2º par: Sol</span>
+                <span class="note">1º par: Si♭</span>
               </div>
 
-              <div>
-                <strong>Músicas famosas com essa afinação:</strong>
-                <ul class="songs">
-                  <li>"As Andorinhas" - Almir Sater</li>
-                  <li>"Canoeiro" - Dorival Caymmi</li>
+              <div class="songs">
+                <strong>Músicas famosas</strong>
+                <ul>
+                  <li>"As Andorinhas" — Almir Sater</li>
+                  <li>"Canoeiro" — Dorival Caymmi</li>
                 </ul>
               </div>
             </div>
           </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="section" id="downloads">
-      <div class="container">
-        <div class="section-head reveal">
-          <div>
-            <h3>Área de downloads</h3>
-            <div class="divider"></div>
-          </div>
-          <p>
-            Disponibilize aqui seus arquivos para baixar, como PDF, apostilas, cifras, tabelas de
-            afinação e materiais de apoio.
-          </p>
-        </div>
-
-        <div class="downloads-layout">
-          <aside class="download-highlight glass reveal">
-            <h4>Adicione seus arquivos</h4>
-            <p>
-              Basta substituir os links abaixo pelos caminhos dos seus arquivos. Você pode usar arquivos
-              em PDF, DOCX, ZIP, imagens ou qualquer outro material complementar para seus alunos,
-              clientes ou visitantes.
-            </p>
-          </aside>
-
-          <div class="download-grid">
-            <article class="download-item reveal">
-              <div class="download-icon">PDF</div>
-              <div class="download-meta">
-                <h5>Guia completo de afinações</h5>
-                <p>Arquivo em PDF com o conteúdo principal do site.</p>
-              </div>
-              <a class="download-btn" href="downloads/guia-afinacoes.pdf" download>Baixar arquivo</a>
-            </article>
-
-            <article class="download-item reveal">
-              <div class="download-icon">ZIP</div>
-              <div class="download-meta">
-                <h5>Imagens das afinações</h5>
-                <p>Pasta compactada com imagens para estudo e referência.</p>
-              </div>
-              <a class="download-btn" href="downloads/imagens-afinacoes.zip" download>Baixar arquivo</a>
-            </article>
-
-            <article class="download-item reveal">
-              <div class="download-icon">DOC</div>
-              <div class="download-meta">
-                <h5>Apostila complementar</h5>
-                <p>Material extra com observações, exercícios e anotações.</p>
-              </div>
-              <a class="download-btn" href="downloads/apostila-complementar.docx" download>Baixar arquivo</a>
-            </article>
-
-            <article class="download-item reveal">
-              <div class="download-icon">TAB</div>
-              <div class="download-meta">
-                <h5>Tabela de afinações</h5>
-                <p>Resumo rápido para consulta das principais afinações da viola.</p>
-              </div>
-              <a class="download-btn" href="downloads/tabela-afinacoes.pdf" download>Baixar arquivo</a>
-            </article>
-          </div>
         </div>
       </div>
     </section>
@@ -1098,87 +1041,146 @@
       <div class="container">
         <div class="section-head reveal">
           <div>
-            <h3>Dicas para cuidar da sua viola</h3>
-            <div class="divider"></div>
+            <span class="eyebrow">Conservação do instrumento</span>
+            <h3>Dicas para cuidar bem da sua viola</h3>
           </div>
           <p>
-            Uma boa manutenção ajuda a preservar a tocabilidade, a afinação e a qualidade sonora do
-            instrumento por muito mais tempo.
+            Cuidar corretamente da viola caipira aumenta sua vida útil, preserva a tocabilidade e ajuda
+            a manter a qualidade sonora do instrumento.
           </p>
         </div>
+        <div class="divider"></div>
 
-        <div class="care-layout">
-          <aside class="care-box glass reveal">
-            <h4>Cuide bem do seu instrumento</h4>
-            <p>
-              A viola caipira é delicada e merece atenção constante. Seguindo práticas simples de
-              conservação, você garante maior durabilidade e melhor desempenho sonoro.
-            </p>
-          </aside>
+        <div class="care-grid" style="margin-top:2rem;">
+          <div class="care-panel reveal">
+            <div class="care-list">
+              <div class="care-item">
+                <div class="care-num">1</div>
+                <div>
+                  <h5>Limpeza</h5>
+                  <p>Utilize um pano macio e seco para limpar as cordas e o corpo da viola após cada uso, evitando acúmulo de poeira e resíduos.</p>
+                </div>
+              </div>
 
-          <div class="care-list">
-            <article class="care-item reveal">
-              <h5>Limpeza</h5>
-              <p>
-                Mantenha a viola limpa e livre de poeira. Utilize um pano macio e seco para limpar as
-                cordas e o corpo do instrumento após cada uso.
-              </p>
-            </article>
+              <div class="care-item">
+                <div class="care-num">2</div>
+                <div>
+                  <h5>Armazenamento</h5>
+                  <p>Guarde a viola em local seco e arejado, longe da umidade e do calor excessivo. Um estojo apropriado é altamente recomendado.</p>
+                </div>
+              </div>
 
-            <article class="care-item reveal">
-              <h5>Armazenamento</h5>
-              <p>
-                Guarde a viola em local seco e arejado, longe da umidade e do calor excessivo. Sempre
-                que possível, utilize um estojo apropriado para transporte e proteção.
-              </p>
-            </article>
+              <div class="care-item">
+                <div class="care-num">3</div>
+                <div>
+                  <h5>Troca de cordas</h5>
+                  <p>Troque as cordas a cada seis meses ou sempre que necessário para manter um som de qualidade e evitar rompimentos durante a execução.</p>
+                </div>
+              </div>
 
-            <article class="care-item reveal">
-              <h5>Troca de cordas</h5>
-              <p>
-                Recomenda-se trocar as cordas a cada seis meses ou sempre que necessário. Isso ajuda a
-                manter a qualidade do som e evita rompimentos durante a execução.
-              </p>
-            </article>
+              <div class="care-item">
+                <div class="care-num">4</div>
+                <div>
+                  <h5>Regulagem</h5>
+                  <p>Faça regulagens periódicas com um luthier de confiança para garantir boa tocabilidade e afinação correta do instrumento.</p>
+                </div>
+              </div>
 
-            <article class="care-item reveal">
-              <h5>Regulagem</h5>
-              <p>
-                Periodicamente, é importante fazer uma regulagem para garantir que a viola esteja com a
-                afinação correta e boa tocabilidade. Procure um luthier de confiança.
-              </p>
-            </article>
-
-            <article class="care-item reveal">
-              <h5>Evite quedas e impactos</h5>
-              <p>
-                Como é um instrumento delicado, é fundamental evitar quedas e batidas que possam causar
-                danos estruturais. Não deixe a viola em locais onde possa ser derrubada acidentalmente.
-              </p>
-            </article>
+              <div class="care-item">
+                <div class="care-num">5</div>
+                <div>
+                  <h5>Evite quedas e impactos</h5>
+                  <p>A viola é delicada. Evite deixá-la em locais onde possa ser derrubada ou sofrer impactos acidentais.</p>
+                </div>
+              </div>
+            </div>
           </div>
+
+          <aside class="downloads-panel reveal" id="downloads">
+            <span class="eyebrow">Materiais complementares</span>
+            <h3 style="margin:.5rem 0 0; font-family:'Bebas Neue', cursive; font-size:clamp(2rem,4vw,3.2rem); line-height:.95; font-weight:400; letter-spacing:.03em;">
+              Downloads de apostilas
+            </h3>
+            <p style="color:var(--muted); line-height:1.8; margin:.8rem 0 0;">
+              Espaço reservado para você adicionar links, arquivos PDF, estudos de repertório e materiais de apoio.
+            </p>
+
+            <div class="downloads-list">
+              <div class="download-item">
+                <div>
+                  <h5>Apostila 01 — Introdução à Viola Caipira</h5>
+                  <p>Espaço para inserir link do PDF ou arquivo para download.</p>
+                </div>
+                <button class="btn btn-secondary download-btn" data-download="Apostila 01">
+                  Download
+                </button>
+              </div>
+
+              <div class="download-item">
+                <div>
+                  <h5>Apostila 02 — Principais Afinações</h5>
+                  <p>Use este bloco para disponibilizar um guia em PDF com as afinações estudadas.</p>
+                </div>
+                <button class="btn btn-secondary download-btn" data-download="Apostila 02">
+                  Download
+                </button>
+              </div>
+
+              <div class="download-item">
+                <div>
+                  <h5>Apostila 03 — Exercícios e Repertório</h5>
+                  <p>Adicione aqui materiais práticos, cifras, exercícios e estudos complementares.</p>
+                </div>
+                <button class="btn btn-secondary download-btn" data-download="Apostila 03">
+                  Download
+                </button>
+              </div>
+
+              <div class="download-item">
+                <div>
+                  <h5>Apostila 04 — Cuidados com o Instrumento</h5>
+                  <p>Área ideal para um material com dicas de manutenção, limpeza e conservação.</p>
+                </div>
+                <button class="btn btn-secondary download-btn" data-download="Apostila 04">
+                  Download
+                </button>
+              </div>
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <section class="section cta">
+      <div class="container">
+        <div class="cta-box reveal">
+          <div>
+            <span class="eyebrow">Pronto para personalizar</span>
+            <h3>Estrutura pronta para sua marca, imagens e apostilas</h3>
+            <p>
+              Esta página foi criada para ser facilmente editada. Você pode substituir o espaço da logomarca,
+              inserir as fotos de cada afinação e conectar os botões de download aos seus arquivos reais.
+            </p>
+          </div>
+          <a href="#inicio" class="btn btn-primary">Voltar ao topo</a>
         </div>
       </div>
     </section>
   </main>
 
   <footer>
-    <div class="container">
-      <div class="footer-panel reveal">
-        <h6>Resumo</h6>
-        <p>
-          A viola caipira possui uma grande variedade de afinações, cada uma com sua própria
-          sonoridade e estilo. Experimente essas possibilidades e descubra aquela que melhor combina
-          com seu gosto musical e sua forma de tocar.
-        </p>
-      </div>
+    <div class="container footer-row">
+      <span>© <span id="year"></span> • Afinações de Viola Caipira</span>
+      <span>Layout moderno em tons de azul • HTML + CSS + JavaScript</span>
     </div>
   </footer>
 
   <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+
     const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+      entries.forEach(entry => {
+        if(entry.isIntersecting){
           entry.target.classList.add('visible');
           observer.unobserve(entry.target);
         }
@@ -1187,13 +1189,10 @@
 
     document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
 
-    document.querySelectorAll('a[href^="#"]').forEach(link => {
-      link.addEventListener('click', function(e){
-        const target = document.querySelector(this.getAttribute('href'));
-        if(target){
-          e.preventDefault();
-          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-        }
+    document.querySelectorAll('[data-download]').forEach(button => {
+      button.addEventListener('click', () => {
+        const nome = button.getAttribute('data-download');
+        alert(`${nome}: conecte este botão ao arquivo PDF ou link de download desejado.`);
       });
     });
   </script>
